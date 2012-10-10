@@ -4,7 +4,7 @@
   <title><![CDATA[ocxced]]></title>
   <link href="http://ruoranwang.github.com/atom.xml" rel="self"/>
   <link href="http://ruoranwang.github.com/"/>
-  <updated>2012-10-10T11:26:02-04:00</updated>
+  <updated>2012-10-10T12:20:34-04:00</updated>
   <id>http://ruoranwang.github.com/</id>
   <author>
     <name><![CDATA[Ruoran Wang]]></name>
@@ -12,6 +12,25 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Playing with Nodejs]]></title>
+    <link href="http://ruoranwang.github.com/blog/2012/10/10/playing-with-nodejs/"/>
+    <updated>2012-10-10T11:37:00-04:00</updated>
+    <id>http://ruoranwang.github.com/blog/2012/10/10/playing-with-nodejs</id>
+    <content type="html"><![CDATA[<p>Recently I started to play with nodejs. Inspired by <a href="http://cnodejs.org">cnodejs.org</a>, I created a forum called <a href="http://a2um.com">A2UM</a>.
+The forum is based on express, which seems to be very handy.</p>
+
+<p>Here are the technologies that involved.</p>
+
+<ul>
+<li>CloudFlare for CDN.</li>
+<li>VPS provided by DigitalOcean.</li>
+<li>Forum source code from node_club</li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Start a micro instance with a larger EBS volume than the default one]]></title>

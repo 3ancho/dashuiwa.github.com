@@ -2,56 +2,60 @@
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
         <loc>http://ruoranwang.github.com/blog/2012/02/03/looking-for-apps-on-kindle-touch/</loc>
-        <lastmod>2012-10-10T11:22:20-04:00</lastmod>
+        <lastmod>2012-10-10T11:31:22-04:00</lastmod>
     </url>
     <url>
         <loc>
             http://ruoranwang.github.com/blog/2012/02/14/python--vim-got-a-nasty-paper-work-done/
         </loc>
-        <lastmod>2012-10-10T11:22:20-04:00</lastmod>
+        <lastmod>2012-10-10T11:31:22-04:00</lastmod>
     </url>
     <url>
         <loc>
             http://ruoranwang.github.com/blog/2012/02/19/on-the-internet-nobody-knows-youre-a-dog-not/
         </loc>
-        <lastmod>2012-10-10T11:22:20-04:00</lastmod>
+        <lastmod>2012-10-10T11:31:22-04:00</lastmod>
     </url>
     <url>
         <loc>http://ruoranwang.github.com/blog/2012/02/25/vim-spell-check/</loc>
-        <lastmod>2012-10-10T11:22:20-04:00</lastmod>
+        <lastmod>2012-10-10T11:31:22-04:00</lastmod>
     </url>
     <url>
         <loc>
             http://ruoranwang.github.com/blog/2012/03/06/snippetsvim-jinjadjango-template-doesnt-expand/
         </loc>
-        <lastmod>2012-10-10T11:22:20-04:00</lastmod>
+        <lastmod>2012-10-10T11:31:22-04:00</lastmod>
     </url>
     <url>
         <loc>http://ruoranwang.github.com/blog/2012/04/10/python-27-on-snow-leopard/</loc>
-        <lastmod>2012-10-10T11:22:20-04:00</lastmod>
+        <lastmod>2012-10-10T11:31:22-04:00</lastmod>
     </url>
     <url>
         <loc>
             http://ruoranwang.github.com/blog/2012/06/10/working-with-sencha-touch-2-on-os-x-106/
         </loc>
-        <lastmod>2012-10-10T11:22:20-04:00</lastmod>
+        <lastmod>2012-10-10T11:31:22-04:00</lastmod>
     </url>
     <url>
         <loc>
             http://ruoranwang.github.com/blog/2012/06/28/start-a-micro-instance-with-a-larger-ebs-volume-than-the-default-one/
         </loc>
-        <lastmod>2012-10-10T11:22:20-04:00</lastmod>
+        <lastmod>2012-10-10T11:31:22-04:00</lastmod>
+    </url>
+    <url>
+        <loc>http://ruoranwang.github.com/blog/2012/10/10/playing-with-nodejs/</loc>
+        <lastmod>2012-10-10T11:47:29-04:00</lastmod>
     </url>
     <url>
         <loc>http://ruoranwang.github.com/about/</loc>
-        <lastmod>2012-10-10T11:22:20-04:00</lastmod>
+        <lastmod>2012-10-10T11:49:32-04:00</lastmod>
     </url>
     <url>
         <loc>http://ruoranwang.github.com/blog/archives/</loc>
-        <lastmod>2012-10-10T11:22:20-04:00</lastmod>
+        <lastmod>2012-10-10T11:47:29-04:00</lastmod>
     </url>
     <url>
         <loc>http://ruoranwang.github.com/</loc>
-        <lastmod>2012-10-10T11:22:20-04:00</lastmod>
+        <lastmod>2012-10-10T11:47:29-04:00</lastmod>
     </url>
 </urlset>
