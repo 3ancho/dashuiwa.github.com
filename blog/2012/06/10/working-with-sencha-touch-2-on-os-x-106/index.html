@@ -5,11 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>ocxced</title>
+  <title>Working with sencha touch 2 on OS X 10.6 - ocxced</title>
   <meta name="author" content="Ruoran Wang">
 
   
-  <meta name="description" content="Start a micro instance with a larger EBS volume than the default one. ec2-run-instances -k KEY -n 1 -t t1.micro &#8211;block-device-mapping /dev/sda1 &hellip;">
+  <meta name="description" content="I failed many time to install the SDK tools for sencha touch 2. To clarify,
+SDK tools is just some command line tools which accelerates the dev &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +19,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://ruoranwang.github.com/">
+  <link rel="canonical" href="http://ruoranwang.github.com/blog/2012/06/10/working-with-sencha-touch-2-on-os-x-106/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -76,54 +77,12 @@
 </nav>
   <div id="main">
     <div id="content">
-      <div class="blog-index">
+      <div>
+<article class="hentry" role="article">
   
-  
-  
-    <article>
-      
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2012/06/28/start-a-micro-instance-with-a-larger-ebs-volume-than-the-default-one/">Start a Micro Instance With a Larger EBS Volume Than the Default One</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-06-28T00:00:00-04:00" pubdate data-updated="true">Jun 28<span>th</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Start a micro instance with a larger EBS volume than the default one.</p>
-
-<p>ec2-run-instances -k KEY -n 1 -t t1.micro &#8211;block-device-mapping /dev/sda1=:10
-ami-0ce41865 -r us-east-1d</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/06/10/working-with-sencha-touch-2-on-os-x-106/">Working With Sencha Touch 2 on OS X 10.6</a></h1>
+      <h1 class="entry-title">Working With Sencha Touch 2 on OS X 10.6</h1>
     
     
       <p class="meta">
@@ -146,7 +105,7 @@ ami-0ce41865 -r us-east-1d</p>
   </header>
 
 
-  <div class="entry-content"><p>I failed many time to install the SDK tools for sencha touch 2. To clarify,
+<div class="entry-content"><p>I failed many time to install the SDK tools for sencha touch 2. To clarify,
 SDK tools is just some command line tools which accelerates the dev process.
 Kinda like scaffolding in Ruby. SDK tools will be installed by a installer.
 That is different from the actual package, which is a zip file downloaded. At
@@ -163,7 +122,7 @@ PATH=/Applications/SenchaSDKTools-2.0.0-beta3/appbuilder:$PATH</p>
 
 <p>Second problem: [ERROR] Sencha SDK Tools 2.0.0-beta3 cannot be found from your
 system (SENCHA_SDK_TOOLS_2_0_0_BETA3 environment variable is not set). Please
-download and install version &#8220;2.0.0-beta3&#8221; of the tools from
+download and install version "2.0.0-beta3" of the tools from
 <a href="http://www.sencha.com/products/sdk-%0Atools">http://www.sencha.com/products/sdk-tools</a> . Close this terminal and open a new one after the installation is
 complete.</p>
 
@@ -177,65 +136,16 @@ SENCHA_SDK_TOOLS_2_0_0_BETA3=/Applications/SenchaSDKTools-2.0.0-beta3/</p>
 -Unknown-error-running-post-install-step.-Installation-may-not-complete-
 correctly</a></p>
 </div>
-  
-  
 
 
-    </article>
-  
-  
-    <article>
+  <footer>
+    <p class="meta">
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/04/10/python-27-on-snow-leopard/">Python 2.7 on Snow Leopard</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
   
 
+<span class="byline author vcard">Posted by <span class="fn">Ruoran Wang</span></span>
 
-<time datetime="2012-04-10T00:00:00-04:00" pubdate data-updated="true">Apr 10<span>th</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Use the default easy_install, packages will be installed under python2.6.</p>
-
-<ol>
-<li><p>Download from python.org And make sure python &#8211;version is 2.7</p></li>
-<li><p>Install pip curl -O <a href="http://python-distribute.org/distribute_setup.py">http://python-distribute.org/distribute_setup.py</a> python distribute_setup.py easy_install pip</p></li>
-<li><p>Get Virtualenv working pip install virtualenvwrapper export WORKON_HOME=~/Envs mkdir -p $WORKON_HOME source /usr/local/bin/virtualenvwrapper.sh</p></li>
-</ol>
-
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/03/06/snippetsvim-jinjadjango-template-doesnt-expand/">snippets.vim: Jinja/django Template Doesn&#8217;t Expand</a></h1>
-    
-    
-      <p class="meta">
-        
 
 
 
@@ -247,92 +157,36 @@ correctly</a></p>
   
 
 
-<time datetime="2012-03-06T00:00:00-05:00" pubdate data-updated="true">Mar 6<span>th</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>I was configuring snippets.vim, which I should have done earlier that could
-save a lot of time. Then, I ran into an issue. I&#8217;ve been developing a web app
-using Flask, and this means I use jinja2 for html template. My templates are
-all with extension .html, which should work directly with default html
-snippets come with snippets.vim. But it doesn&#8217;t.</p>
-
-<p>I didn&#8217;t find a solution online. However, I found some snippets for django
-template. The final solution is just append content from html.snippets to
-htmldjango.snippets.</p>
-
-<pre><code>cat html.snippets &gt;&gt; htmldjango.snippets
-</code></pre>
-
-<p>And in .vimrc add</p>
-
-<pre><code>autocmd FileType html set ft=htmldjango.snippets " For SnipMate
-</code></pre>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
+<time datetime="2012-06-10T00:00:00-04:00" pubdate data-updated="true">Jun 10<span>th</span>, 2012</time>
       
-  <header>
+
+
+    </p>
     
-      <h1 class="entry-title"><a href="/blog/2012/02/25/vim-spell-check/">Vim Spell Check</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
+      <div class="sharing">
   
-
-
-<time datetime="2012-02-25T00:00:00-05:00" pubdate data-updated="true">Feb 25<span>th</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>I just found vim have built-in spell check. Never to late for me.</p>
-
-<pre><code>:set spell spelllang=en_us    # enable
-:set nospell    # disable
-</code></pre>
-
-<p>When highlighting the misspelled word:</p>
-
-<pre><code>zg    # will add this to your own word list
-z=    # find suggestion 
-]s    # move to next misspelled word
-</code></pre>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://ruoranwang.github.com/blog/2012/06/10/working-with-sencha-touch-2-on-os-x-106/" data-via="" data-counturl="http://ruoranwang.github.com/blog/2012/06/10/working-with-sencha-touch-2-on-os-x-106/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
 </div>
-  
-  
 
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2012/04/10/python-27-on-snow-leopard/" title="Previous Post: Python 2.7 on Snow Leopard">&laquo; Python 2.7 on Snow Leopard</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2012/06/28/start-a-micro-instance-with-a-larger-ebs-volume-than-the-default-one/" title="Next Post: Start a micro instance with a larger EBS volume than the default one">Start a micro instance with a larger EBS volume than the default one &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
 
-    </article>
-  
-  <div class="pagination">
-    
-      <a class="prev" href="/blog/page/2/">&larr; Older</a>
-    
-    <a href="/blog/archives">Blog Archives</a>
-    
-  </div>
 </div>
+
 <aside class="sidebar">
   
     <section>
@@ -352,7 +206,7 @@ z=    # find suggestion
       </li>
     
       <li class="post">
-        <a href="/blog/2012/03/06/snippetsvim-jinjadjango-template-doesnt-expand/">snippets.vim: jinja/django template doesn&#8217;t expand</a>
+        <a href="/blog/2012/03/06/snippetsvim-jinjadjango-template-doesnt-expand/">snippets.vim: jinja/django template doesn't expand</a>
       </li>
     
       <li class="post">
@@ -365,7 +219,7 @@ z=    # find suggestion
 <section>
   <h1>GitHub Repos</h1>
   <ul id="gh_repos">
-    <li class="loading">Status updating&#8230;</li>
+    <li class="loading">Status updating...</li>
   </ul>
   
   <a href="https://github.com/ruoranwang">@ruoranwang</a> on GitHub
@@ -398,6 +252,7 @@ z=    # find suggestion
 
   
 </aside>
+
 
     </div>
   </div>
