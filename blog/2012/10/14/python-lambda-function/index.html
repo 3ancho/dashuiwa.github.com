@@ -5,12 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Working with sencha touch 2 on OS X 10.6 - ocxced</title>
+  <title>Python lambda function - ocxced</title>
   <meta name="author" content="Ruoran Wang">
 
   
-  <meta name="description" content="I failed many time to install the SDK tools for sencha touch 2. To clarify,
-SDK tools is just some command line tools which accelerates the dev &hellip;">
+  <meta name="description" content="This is the first episode of a series that revisits features that I didn&#8217;t fully understand, about a technology such as Python, JavaScript, etc &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -19,7 +18,7 @@ SDK tools is just some command line tools which accelerates the dev &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://ruoranwang.github.com/blog/2012/06/10/working-with-sencha-touch-2-on-os-x-106/">
+  <link rel="canonical" href="http://ruoranwang.github.com/blog/2012/10/14/python-lambda-function/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -81,7 +80,7 @@ SDK tools is just some command line tools which accelerates the dev &hellip;">
   
   <header>
     
-      <h1 class="entry-title">Working With Sencha Touch 2 on OS X 10.6</h1>
+      <h1 class="entry-title">Python Lambda Function</h1>
     
     
       <p class="meta">
@@ -97,43 +96,25 @@ SDK tools is just some command line tools which accelerates the dev &hellip;">
   
 
 
-<time datetime="2012-06-10T00:00:00-04:00" pubdate data-updated="true">Jun 10<span>th</span>, 2012</time>
+<time datetime="2012-10-14T13:54:00-04:00" pubdate data-updated="true">Oct 14<span>th</span>, 2012</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>I failed many time to install the SDK tools for sencha touch 2. To clarify,
-SDK tools is just some command line tools which accelerates the dev process.
-Kinda like scaffolding in Ruby. SDK tools will be installed by a installer.
-That is different from the actual package, which is a zip file downloaded. At
-the time of writing, the extracted folder name is sencha-touch-2.0.1.1.</p>
+<div class="entry-content"><p>This is the first episode of a series that revisits features that I didn&#8217;t fully understand, about a technology such as Python, JavaScript, etc. The topic domain is, well, anything about computer science. (Really?) The purpose is, hmm, have fun. (Really?)</p>
 
-<p>Ok, my first problem is: Unknown error running post-install step. Installation
-may not complete correctly</p>
+<p>Ok, let&#8217;s get started, Python Lambda Functions.</p>
 
-<p>Solution: Add following to zshrc (I am using zsh) export
-PATH=/Applications/SenchaSDKTools-2.0.0-beta3/:$PATH export
-PATH=/Applications/SenchaSDKTools-2.0.0-beta3/command:$PATH export
-PATH=/Applications/SenchaSDKTools-2.0.0-beta3/jsbuilder:$PATH export
-PATH=/Applications/SenchaSDKTools-2.0.0-beta3/appbuilder:$PATH</p>
+<ul>
+<li>So, it&#8217;s anonymous functions, like <code>function() {}</code> in JavaScript, obviously.</li>
+<li>It&#8217;s a feature inherited from functional programming, cool and confusing.</li>
+<li>Work well with filter(), map(), and reduce(). (all take a function and a sequence)</li>
+</ul>
 
-<p>Second problem: [ERROR] Sencha SDK Tools 2.0.0-beta3 cannot be found from your
-system (SENCHA_SDK_TOOLS_2_0_0_BETA3 environment variable is not set). Please
-download and install version "2.0.0-beta3" of the tools from
-<a href="http://www.sencha.com/products/sdk-%0Atools">http://www.sencha.com/products/sdk-tools</a> . Close this terminal and open a new one after the installation is
-complete.</p>
 
-<p>Solution: Add following to zshrc (again) export
-SENCHA_SDK_TOOLS_2_0_0_BETA3=/Applications/SenchaSDKTools-2.0.0-beta3/</p>
-
-<p>For bash, may add those environment variables to the corresponding rc file.</p>
-
-<p>Reference: <a href="http://www.sencha.c%0Aom/forum/showthread.php?200583-Couldn-t-install-SDK-Tools-2.0.0-beta3-on-%0AOSX&amp;p=824752#post824752">http://www.sencha.com/forum/showthread.php?200583-Couldn-t
--install-SDK-Tools-2.0.0-beta3-on-OSX&amp;p=824752#post824752</a> <a href="http://www.sencha.com/forum/showthread.php?190083-Unknown-error-%0Arunning-post-install-step.-Installation-may-not-complete-correctly">http://www.sencha.com/forum/showthread.php?190083
--Unknown-error-running-post-install-step.-Installation-may-not-complete-
-correctly</a></p>
+<p>In summary, lambda in python, or possible in elsewhere, seems to be used to describe the individual affect of an AOE.</p>
 </div>
 
 
@@ -156,7 +137,7 @@ correctly</a></p>
   
 
 
-<time datetime="2012-06-10T00:00:00-04:00" pubdate data-updated="true">Jun 10<span>th</span>, 2012</time>
+<time datetime="2012-10-14T13:54:00-04:00" pubdate data-updated="true">Oct 14<span>th</span>, 2012</time>
       
 
 
@@ -164,7 +145,7 @@ correctly</a></p>
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://ruoranwang.github.com/blog/2012/06/10/working-with-sencha-touch-2-on-os-x-106/" data-via="" data-counturl="http://ruoranwang.github.com/blog/2012/06/10/working-with-sencha-touch-2-on-os-x-106/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://ruoranwang.github.com/blog/2012/10/14/python-lambda-function/" data-via="" data-counturl="http://ruoranwang.github.com/blog/2012/10/14/python-lambda-function/" >Tweet</a>
   
   
   <div class="g-plusone" data-size="medium"></div>
@@ -175,10 +156,8 @@ correctly</a></p>
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2012/04/10/python-27-on-snow-leopard/" title="Previous Post: Python 2.7 on Snow Leopard">&laquo; Python 2.7 on Snow Leopard</a>
+        <a class="basic-alignment left" href="/blog/2012/10/10/playing-with-nodejs/" title="Previous Post: Playing with Nodejs">&laquo; Playing with Nodejs</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2012/06/28/start-a-micro-instance-with-a-larger-ebs-volume-than-the-default-one/" title="Next Post: Start a micro instance with a larger EBS volume than the default one">Start a micro instance with a larger EBS volume than the default one &raquo;</a>
       
     </p>
   </footer>

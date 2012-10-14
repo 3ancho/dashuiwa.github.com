@@ -4,7 +4,7 @@
   <title><![CDATA[ocxced]]></title>
   <link href="http://ruoranwang.github.com/atom.xml" rel="self"/>
   <link href="http://ruoranwang.github.com/"/>
-  <updated>2012-10-10T12:23:14-04:00</updated>
+  <updated>2012-10-14T13:55:58-04:00</updated>
   <id>http://ruoranwang.github.com/</id>
   <author>
     <name><![CDATA[Ruoran Wang]]></name>
@@ -12,6 +12,26 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Python lambda function]]></title>
+    <link href="http://ruoranwang.github.com/blog/2012/10/14/python-lambda-function/"/>
+    <updated>2012-10-14T13:54:00-04:00</updated>
+    <id>http://ruoranwang.github.com/blog/2012/10/14/python-lambda-function</id>
+    <content type="html"><![CDATA[<p>This is the first episode of a series that revisits features that I didn&#8217;t fully understand, about a technology such as Python, JavaScript, etc. The topic domain is, well, anything about computer science. (Really?) The purpose is, hmm, have fun. (Really?)</p>
+
+<p>Ok, let&#8217;s get started, Python Lambda Functions.</p>
+
+<ul>
+<li>So, it&#8217;s anonymous functions, like <code>function() {}</code> in JavaScript, obviously.</li>
+<li>It&#8217;s a feature inherited from functional programming, cool and confusing.</li>
+<li>Work well with filter(), map(), and reduce(). (all take a function and a sequence)</li>
+</ul>
+
+
+<p>In summary, lambda in python, or possible in elsewhere, seems to be used to describe the individual affect of an AOE.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Playing with Nodejs]]></title>
