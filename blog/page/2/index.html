@@ -9,8 +9,8 @@
   <meta name="author" content="Ruoran Wang">
 
   
-  <meta name="description" content="I was configuring snippets.vim, which I should have done earlier that could
-save a lot of time. Then, I ran into an issue. I&#8217;ve been developing &hellip;">
+  <meta name="description" content="I failed many time to install the SDK tools for sencha touch 2. To clarify,
+SDK tools is just some command line tools which accelerates the dev &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -78,6 +78,114 @@ save a lot of time. Then, I ran into an issue. I&#8217;ve been developing &helli
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/06/10/working-with-sencha-touch-2-on-os-x-106/">Working With Sencha Touch 2 on OS X 10.6</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-06-10T00:00:00-04:00" pubdate data-updated="true">Jun 10<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I failed many time to install the SDK tools for sencha touch 2. To clarify,
+SDK tools is just some command line tools which accelerates the dev process.
+Kinda like scaffolding in Ruby. SDK tools will be installed by a installer.
+That is different from the actual package, which is a zip file downloaded. At
+the time of writing, the extracted folder name is sencha-touch-2.0.1.1.</p>
+
+<p>Ok, my first problem is: Unknown error running post-install step. Installation
+may not complete correctly</p>
+
+<p>Solution: Add following to zshrc (I am using zsh) export
+PATH=/Applications/SenchaSDKTools-2.0.0-beta3/:$PATH export
+PATH=/Applications/SenchaSDKTools-2.0.0-beta3/command:$PATH export
+PATH=/Applications/SenchaSDKTools-2.0.0-beta3/jsbuilder:$PATH export
+PATH=/Applications/SenchaSDKTools-2.0.0-beta3/appbuilder:$PATH</p>
+
+<p>Second problem: [ERROR] Sencha SDK Tools 2.0.0-beta3 cannot be found from your
+system (SENCHA_SDK_TOOLS_2_0_0_BETA3 environment variable is not set). Please
+download and install version &#8220;2.0.0-beta3&#8221; of the tools from
+<a href="http://www.sencha.com/products/sdk-%0Atools">http://www.sencha.com/products/sdk-tools</a> . Close this terminal and open a new one after the installation is
+complete.</p>
+
+<p>Solution: Add following to zshrc (again) export
+SENCHA_SDK_TOOLS_2_0_0_BETA3=/Applications/SenchaSDKTools-2.0.0-beta3/</p>
+
+<p>For bash, may add those environment variables to the corresponding rc file.</p>
+
+<p>Reference: <a href="http://www.sencha.c%0Aom/forum/showthread.php?200583-Couldn-t-install-SDK-Tools-2.0.0-beta3-on-%0AOSX&amp;p=824752#post824752">http://www.sencha.com/forum/showthread.php?200583-Couldn-t
+-install-SDK-Tools-2.0.0-beta3-on-OSX&amp;p=824752#post824752</a> <a href="http://www.sencha.com/forum/showthread.php?190083-Unknown-error-%0Arunning-post-install-step.-Installation-may-not-complete-correctly">http://www.sencha.com/forum/showthread.php?190083
+-Unknown-error-running-post-install-step.-Installation-may-not-complete-
+correctly</a></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/04/10/python-27-on-snow-leopard/">Python 2.7 on Snow Leopard</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-04-10T00:00:00-04:00" pubdate data-updated="true">Apr 10<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Use the default easy_install, packages will be installed under python2.6.</p>
+
+<ol>
+<li><p>Download from python.org And make sure python &#8211;version is 2.7</p></li>
+<li><p>Install pip curl -O <a href="http://python-distribute.org/distribute_setup.py">http://python-distribute.org/distribute_setup.py</a> python distribute_setup.py easy_install pip</p></li>
+<li><p>Get Virtualenv working pip install virtualenvwrapper export WORKON_HOME=~/Envs mkdir -p $WORKON_HOME source /usr/local/bin/virtualenvwrapper.sh</p></li>
+</ol>
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -220,171 +328,9 @@ game.</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/02/14/python--vim-got-a-nasty-paper-work-done/">Python + Vim: Got a Nasty Paper Work Done</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-02-14T00:00:00-05:00" pubdate data-updated="true">Feb 14<span>th</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>You are asked to fill out of Excel with the new eligible members of a group.</p>
-
-<p>What you got: An Excel from the headquarter of this group contains a list of
-people, which has a special formatting and equation kinda stuff plus a warning
-&#8220;formatting couldn&#8217;t be changed!!!&#8221; This Excel also include the existing
-members of this group. With &#8220;M&#8221; in the &#8220;Existing Member&#8221; column.</p>
-
-<p>Another Excel from a different party, which has a list of people. However
-there are more columns in this Excel, and even it shares the same column with
-the previous one, they name their value differently. For example, in &#8220;major&#8221;
-column &#8220;CPE&#8221; is equivalent to &#8220;Computer Engg&#8221; in another Excel. Another
-example, in &#8220;First Name&#8221; column &#8220;Robert Allen&#8221; is &#8220;Robert&#8221; in another Excel.
-Why? Simply because one party doesn&#8217;t care about middle name. The other, do
-care, coma, but don&#8217;t even create a column &#8220;Middle Name&#8221;, thus put middle name
-along with first name.</p>
-
-<p>Your goal: The final Excel will have the same format as the first Excel.</p>
-
-<p>My solution: Export both Excels in to .csv files. Manipulate the columns a
-little bit using vim macro. First file: list.csv Second file: school.csv
-Output file: output.csv</p>
-
-<p>I will copy the output.csv and copy into the first Excel</p>
-
-<pre><code>aaa = open("list.csv", "r")
-bbb = open("school.csv", "r")
-out = open("out.csv", "w")
-
-member = []
-
-ls1 = tbp.readlines()
-for line in ls1:
-    words = line.split(",")
-    if " " in words[0]:
-        words[0] = words[0].split(" ")[0]
-    key = (words[0], words[1])
-    member.append(key)
-
-ls2 = iit.readlines()
-
-major_dict = {"BME": "Biomedical engg",
-              "CPE": "Computer engg",
-              "EE": "Electrical engg",
-              "ARCE": "Architectural engg",
-              "CE": "Civil engg",
-              "AE": "Aerospace engg",
-              "ME": "Mechanical engg",
-              "CHE": "Chemical engg",
-              "MSE": "Materials science and engg"}
-
-words = []
-for line in ls2:
-    if line == " " or line == " ":
-        continue
-    words = line.split(",")
-    words[5].replace(" ", "")
-    words[5].replace(" ", "")
-
-    if words[5] in major_dict:
-        major = major_dict[words[5]]
-        fn = words[1]
-        ln = words[0]
-        sj = words[2]
-        if sj == "Junior":
-            year = "2013"
-        else:
-            year = "2012"
-        month = "May"
-        mem = ""
-        for item in member:
-            if fn in item and ln in item:
-                mem = "M"
-        out.write("{0},{1},{2},{3},{4},{5},{6} ".\
-                    format(fn,ln,sj,month,year,major,mem) )
-    else:
-        print "ERROR! ", line
-tbp.close()
-iit.close()
-out.close()
-</code></pre>
-
-<p>I am not familiar with Excel macro or any trick that could solve this problem,
-with grace.</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/02/03/looking-for-apps-on-kindle-touch/">Looking for Apps on Kindle Touch</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-02-03T00:00:00-05:00" pubdate data-updated="true">Feb 3<span>rd</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>It is a great pleasure to read books on KT. However, I am always trying to
-check my email and read reddit. Arguably, I understand it is not a device
-designed for application. But I really believe it could have couple of useful
-apps that helpful.</p>
-
-<ol>
-<li><p>Weather App There are already service let you push your google reader items to app. Why not send a weather report? To where? Maybe a corner of the screen saver.</p></li>
-<li><p>Email Client The gmail already works well on KT. A native app would boost up the experience. Maybe another corner of screen saver to indicate the new emails.</p></li>
-<li><p>Browser shortcut. (Or shortcut for applications, in other words navigation bar) Now it takes 3 taps to bring up the browser, which could be done by 1. Anyway, there could be a better UI.</p></li>
-</ol>
-
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
+    
+      <a class="prev" href="/blog/page/3/">&larr; Older</a>
     
     <a href="/blog/archives">Blog Archives</a>
     
@@ -403,6 +349,14 @@ apps that helpful.</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2012/10/19/using-bluetooth-serial-port-on-os-x-mountain-lion/">Using Bluetooth Serial Port on OS X Mountain Lion</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/10/18/learn-python-using-python-and-ipython/">Learn python using python and iPython</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2012/10/14/python-lambda-function/">Python lambda function</a>
       </li>
     
@@ -412,14 +366,6 @@ apps that helpful.</p>
     
       <li class="post">
         <a href="/blog/2012/06/28/start-a-micro-instance-with-a-larger-ebs-volume-than-the-default-one/">Start a micro instance with a larger EBS volume than the default one</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/06/10/working-with-sencha-touch-2-on-os-x-106/">Working with sencha touch 2 on OS X 10.6</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/04/10/python-27-on-snow-leopard/">Python 2.7 on Snow Leopard</a>
       </li>
     
   </ul>

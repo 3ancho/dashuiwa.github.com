@@ -5,11 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Python + Vim: Got a nasty paper work done  - ocxced</title>
+  <title>Learn python using python and iPython - ocxced</title>
   <meta name="author" content="Ruoran Wang">
 
   
-  <meta name="description" content="You are asked to fill out of Excel with the new eligible members of a group. What you got: An Excel from the headquarter of this group contains a &hellip;">
+  <meta name="description" content="Doesn&#8217;t the title sound awesome? Expanded version:
+Learn python(the language) using python(source code and test cases) and ipython(a python &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +19,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://ruoranwang.github.com/blog/2012/02/14/python--vim-got-a-nasty-paper-work-done/">
+  <link rel="canonical" href="http://ruoranwang.github.com/blog/2012/10/18/learn-python-using-python-and-ipython/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -80,7 +81,7 @@
   
   <header>
     
-      <h1 class="entry-title">Python + Vim: Got a Nasty Paper Work Done</h1>
+      <h1 class="entry-title">Learn Python Using Python and iPython</h1>
     
     
       <p class="meta">
@@ -96,96 +97,59 @@
   
 
 
-<time datetime="2012-02-14T00:00:00-05:00" pubdate data-updated="true">Feb 14<span>th</span>, 2012</time>
+<time datetime="2012-10-18T00:38:00-04:00" pubdate data-updated="true">Oct 18<span>th</span>, 2012</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>You are asked to fill out of Excel with the new eligible members of a group.</p>
+<div class="entry-content"><p>Doesn&#8217;t the title sound awesome?</p>
 
-<p>What you got: An Excel from the headquarter of this group contains a list of
-people, which has a special formatting and equation kinda stuff plus a warning
-"formatting couldn't be changed!!!" This Excel also include the existing
-members of this group. With "M" in the "Existing Member" column.</p>
+<p>Expanded version:
+Learn python(the language) using python(source code and test cases) and ipython(a python module)</p>
 
-<p>Another Excel from a different party, which has a list of people. However
-there are more columns in this Excel, and even it shares the same column with
-the previous one, they name their value differently. For example, in "major"
-column "CPE" is equivalent to "Computer Engg" in another Excel. Another
-example, in "First Name" column "Robert Allen" is "Robert" in another Excel.
-Why? Simply because one party doesn't care about middle name. The other, do
-care, coma, but don't even create a column "Middle Name", thus put middle name
-along with first name.</p>
+<p>So:</p>
 
-<p>Your goal: The final Excel will have the same format as the first Excel.</p>
+<ol>
+<li>In order to understand python(source code and test cases), you need knowledge of python(language) and ipython(to use the source!)</li>
+<li>In order to use ipython, you need to play with python(language) in ipython</li>
+</ol>
 
-<p>My solution: Export both Excels in to .csv files. Manipulate the columns a
-little bit using vim macro. First file: list.csv Second file: school.csv
-Output file: output.csv</p>
 
-<p>I will copy the output.csv and copy into the first Excel</p>
+<p>The pseudo source code for the title:</p>
 
-<pre><code>aaa = open("list.csv", "r")
-bbb = open("school.csv", "r")
-out = open("out.csv", "w")
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>learn(python):
+</span><span class='line'>    use = python, ipython
+</span><span class='line'>    for item in use:
+</span><span class='line'>        if understand(item): return True
+</span><span class='line'>        else: return learn(item)</span></code></pre></td></tr></table></div></figure>
 
-member = []
 
-ls1 = tbp.readlines()
-for line in ls1:
-    words = line.split(",")
-    if " " in words[0]:
-        words[0] = words[0].split(" ")[0]
-    key = (words[0], words[1])
-    member.append(key)
+<p>Ok, I know that&#8217;s stupid. Here is my thought.</p>
 
-ls2 = iit.readlines()
+<p>I had never read the python source code before. Then, I noticed (finally) the path printed while doing <code>logging?</code>. (Question mark <code>?</code> after an item will show the detail of that item.)</p>
 
-major_dict = {"BME": "Biomedical engg",
-              "CPE": "Computer engg",
-              "EE": "Electrical engg",
-              "ARCE": "Architectural engg",
-              "CE": "Civil engg",
-              "AE": "Aerospace engg",
-              "ME": "Mechanical engg",
-              "CHE": "Chemical engg",
-              "MSE": "Materials science and engg"}
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>Type:       module
+</span><span class='line'>String Form:&lt;module 'logging' from '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/logging/__init__.pyc'&gt;
+</span><span class='line'>File:       /System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/logging/__init__.py</span></code></pre></td></tr></table></div></figure>
 
-words = []
-for line in ls2:
-    if line == " " or line == " ":
-        continue
-    words = line.split(",")
-    words[5].replace(" ", "")
-    words[5].replace(" ", "")
 
-    if words[5] in major_dict:
-        major = major_dict[words[5]]
-        fn = words[1]
-        ln = words[0]
-        sj = words[2]
-        if sj == "Junior":
-            year = "2013"
-        else:
-            year = "2012"
-        month = "May"
-        mem = ""
-        for item in member:
-            if fn in item and ln in item:
-                mem = "M"
-        out.write("{0},{1},{2},{3},{4},{5},{6} ".\
-                    format(fn,ln,sj,month,year,major,mem) )
-    else:
-        print "ERROR! ", line
-tbp.close()
-iit.close()
-out.close()
-</code></pre>
+<p>Fortunately, I went to that path and viewed the files, finding those system standard modules/libraries very, very, very well documented.</p>
 
-<p>I am not familiar with Excel macro or any trick that could solve this problem,
-with grace.</p>
+<p>I found many design patterns that I would like to learn, but had not clue about where to look at before.</p>
+
+<p>In words, ipython is very useful for checking documentation for anything you want to play with. Plus the tab completion helps you to list submodules, functions, or variables. This makes exploring a module as easy as traversing a file directory.</p>
+
+<p>As a result, I felt I was not using/learning python in a pythonic way. But now I (think I) do.</p>
 </div>
 
 
@@ -208,15 +172,21 @@ with grace.</p>
   
 
 
-<time datetime="2012-02-14T00:00:00-05:00" pubdate data-updated="true">Feb 14<span>th</span>, 2012</time>
+<time datetime="2012-10-18T00:38:00-04:00" pubdate data-updated="true">Oct 18<span>th</span>, 2012</time>
       
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/python/'>python</a>
+  
+</span>
 
 
     </p>
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://ruoranwang.github.com/blog/2012/02/14/python--vim-got-a-nasty-paper-work-done/" data-via="" data-counturl="http://ruoranwang.github.com/blog/2012/02/14/python--vim-got-a-nasty-paper-work-done/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://ruoranwang.github.com/blog/2012/10/18/learn-python-using-python-and-ipython/" data-via="" data-counturl="http://ruoranwang.github.com/blog/2012/10/18/learn-python-using-python-and-ipython/" >Tweet</a>
   
   
   <div class="g-plusone" data-size="medium"></div>
@@ -227,10 +197,10 @@ with grace.</p>
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2012/02/03/looking-for-apps-on-kindle-touch/" title="Previous Post: Looking for apps on Kindle Touch">&laquo; Looking for apps on Kindle Touch</a>
+        <a class="basic-alignment left" href="/blog/2012/10/14/python-lambda-function/" title="Previous Post: Python lambda function">&laquo; Python lambda function</a>
       
       
-        <a class="basic-alignment right" href="/blog/2012/02/19/on-the-internet-nobody-knows-youre-a-dog-not/" title="Next Post: On the Internet, nobody knows you're a dog, NOT.">On the Internet, nobody knows you're a dog, NOT. &raquo;</a>
+        <a class="basic-alignment right" href="/blog/2012/10/19/using-bluetooth-serial-port-on-os-x-mountain-lion/" title="Next Post: Using Bluetooth Serial Port on OS X Mountain Lion">Using Bluetooth Serial Port on OS X Mountain Lion &raquo;</a>
       
     </p>
   </footer>

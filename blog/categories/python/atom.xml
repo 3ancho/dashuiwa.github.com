@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: python | ocxced]]></title>
+  <link href="http://ruoranwang.github.com/blog/categories/python/atom.xml" rel="self"/>
+  <link href="http://ruoranwang.github.com/"/>
+  <updated>2012-10-19T00:46:11-04:00</updated>
+  <id>http://ruoranwang.github.com/</id>
+  <author>
+    <name><![CDATA[Ruoran Wang]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Using Bluetooth Serial Port on OS X Mountain Lion]]></title>
+    <link href="http://ruoranwang.github.com/blog/2012/10/19/using-bluetooth-serial-port-on-os-x-mountain-lion/"/>
+    <updated>2012-10-19T00:38:00-04:00</updated>
+    <id>http://ruoranwang.github.com/blog/2012/10/19/using-bluetooth-serial-port-on-os-x-mountain-lion</id>
+    <content type="html"><![CDATA[<h4>Using Bluetooth Serial Port on OS X Mountain Lion</h4>
+
+<p>I am taking a robotics class, and simply wants to play with the bluetooth module. Maybe create a robot later to play with my cats?</p>
+
+<h4>Procedures</h4>
+
+<ul>
+<li>Find the bluetooth, the name of device is AC, for some unknown reason.</li>
+</ul>
+
+
+<p><img src="/images/bluetooth/find" alt="find" /></p>
+
+<ul>
+<li>Pair with it, the pairing code is 0000 in my case.</li>
+</ul>
+
+
+<p><img src="/images/bluetooth/pair" alt="pair" /></p>
+
+<ul>
+<li>The underlined part have some config to play with. The general idea is to use serial port service.</li>
+</ul>
+
+
+<p><img src="/images/bluetooth/config" alt="config" /></p>
+
+<ul>
+<li><code>Serial.println()</code> in arduino will write data to the pin1 (TX) and also to the USB cable. So you could compare your data received via bluetooth serial port with the data received via USB serial port. My usb serial port is <code>/dev/tty/usbmodemfa131</code>.</li>
+</ul>
+
+
+<p><img src="/images/bluetooth/arduino" alt="arduino" /></p>
+
+<ul>
+<li>The image below shows the display while using GNU <code>screen</code></li>
+</ul>
+
+
+<p><img src="/images/bluetooth/result" alt="result" /></p>
+
+<h4>Using screen</h4>
+
+<p>The number after the device name is the baud rate, which need to be the same as source.
+<code>
+screen tty.AC-DevB 9600
+</code></p>
+
+<h4>Using PySerial</h4>
+
+<p>```
+In [2]: s = serial.Serial('/dev/tty.AC-DevB', 9600, timeout=1)</p>
+
+<p>In [3]: s.write("r")
+Out[3]: 1</p>
+
+<p>In [4]: s.read()
+Out[4]: 'N'</p>
+
+<p>In [5]: s.read()
+Out[5]: 'i'</p>
+
+<p>In [6]: s.read()
+Out[6]: 'n'</p>
+
+<p>In [7]: s.read()
+Out[7]: 'a'</p>
+
+<p>In [8]: s.read(10)
+Out[8]: '\r\n'</p>
+
+<p>In [9]: s.read(10)
+Out[9]: ''</p>
+
+<p>In [10]: s.write("r")
+Out[10]: 1</p>
+
+<p>In [11]: s.read(10)
+Out[11]: 'Nina\r\n'
+```</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Learn python using python and iPython]]></title>
+    <link href="http://ruoranwang.github.com/blog/2012/10/18/learn-python-using-python-and-ipython/"/>
+    <updated>2012-10-18T00:38:00-04:00</updated>
+    <id>http://ruoranwang.github.com/blog/2012/10/18/learn-python-using-python-and-ipython</id>
+    <content type="html"><![CDATA[<p>Doesn't the title sound awesome?</p>
+
+<p>Expanded version:
+Learn python(the language) using python(source code and test cases) and ipython(a python module)</p>
+
+<p>So:</p>
+
+<ol>
+<li>In order to understand python(source code and test cases), you need knowledge of python(language) and ipython(to use the source!)</li>
+<li>In order to use ipython, you need to play with python(language) in ipython</li>
+</ol>
+
+
+<p>The pseudo source code for the title:</p>
+
+<p>```
+learn(python):</p>
+
+<pre><code>use = python, ipython
+for item in use:
+    if understand(item): return True
+    else: return learn(item)
+</code></pre>
+
+<p>```</p>
+
+<p>Ok, I know that's stupid. Here is my thought.</p>
+
+<p>I had never read the python source code before. Then, I noticed (finally) the path printed while doing <code>logging?</code>. (Question mark <code>?</code> after an item will show the detail of that item.)</p>
+
+<p><code>
+Type:       module
+String Form:&lt;module 'logging' from '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/logging/__init__.pyc'&gt;
+File:       /System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/logging/__init__.py
+</code></p>
+
+<p>Fortunately, I went to that path and viewed the files, finding those system standard modules/libraries very, very, very well documented.</p>
+
+<p>I found many design patterns that I would like to learn, but had not clue about where to look at before.</p>
+
+<p>In words, ipython is very useful for checking documentation for anything you want to play with. Plus the tab completion helps you to list submodules, functions, or variables. This makes exploring a module as easy as traversing a file directory.</p>
+
+<p>As a result, I felt I was not using/learning python in a pythonic way. But now I (think I) do.</p>
+]]></content>
+  </entry>
+  
+</feed>

@@ -4,7 +4,7 @@
   <title><![CDATA[ocxced]]></title>
   <link href="http://ruoranwang.github.com/atom.xml" rel="self"/>
   <link href="http://ruoranwang.github.com/"/>
-  <updated>2012-10-14T13:55:58-04:00</updated>
+  <updated>2012-10-19T00:46:11-04:00</updated>
   <id>http://ruoranwang.github.com/</id>
   <author>
     <name><![CDATA[Ruoran Wang]]></name>
@@ -12,6 +12,178 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Using Bluetooth Serial Port on OS X Mountain Lion]]></title>
+    <link href="http://ruoranwang.github.com/blog/2012/10/19/using-bluetooth-serial-port-on-os-x-mountain-lion/"/>
+    <updated>2012-10-19T00:38:00-04:00</updated>
+    <id>http://ruoranwang.github.com/blog/2012/10/19/using-bluetooth-serial-port-on-os-x-mountain-lion</id>
+    <content type="html"><![CDATA[<h4>Using Bluetooth Serial Port on OS X Mountain Lion</h4>
+
+<p>I am taking a robotics class, and simply wants to play with the bluetooth module. Maybe create a robot later to play with my cats?</p>
+
+<h4>Procedures</h4>
+
+<ul>
+<li>Find the bluetooth, the name of device is AC, for some unknown reason.</li>
+</ul>
+
+
+<p><img src="http://ruoranwang.github.com/images/bluetooth/find" alt="find" /></p>
+
+<ul>
+<li>Pair with it, the pairing code is 0000 in my case.</li>
+</ul>
+
+
+<p><img src="http://ruoranwang.github.com/images/bluetooth/pair" alt="pair" /></p>
+
+<ul>
+<li>The underlined part have some config to play with. The general idea is to use serial port service.</li>
+</ul>
+
+
+<p><img src="http://ruoranwang.github.com/images/bluetooth/config" alt="config" /></p>
+
+<ul>
+<li><code>Serial.println()</code> in arduino will write data to the pin1 (TX) and also to the USB cable. So you could compare your data received via bluetooth serial port with the data received via USB serial port. My usb serial port is <code>/dev/tty/usbmodemfa131</code>.</li>
+</ul>
+
+
+<p><img src="http://ruoranwang.github.com/images/bluetooth/arduino" alt="arduino" /></p>
+
+<ul>
+<li>The image below shows the display while using GNU <code>screen</code></li>
+</ul>
+
+
+<p><img src="http://ruoranwang.github.com/images/bluetooth/result" alt="result" /></p>
+
+<h4>Using screen</h4>
+
+<p>The number after the device name is the baud rate, which need to be the same as source.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>screen tty.AC-DevB 9600</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>Using PySerial</h4>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>In [2]: s = serial.Serial('/dev/tty.AC-DevB', 9600, timeout=1)
+</span><span class='line'>
+</span><span class='line'>In [3]: s.write("r")
+</span><span class='line'>Out[3]: 1
+</span><span class='line'>
+</span><span class='line'>In [4]: s.read()
+</span><span class='line'>Out[4]: 'N'
+</span><span class='line'>
+</span><span class='line'>In [5]: s.read()
+</span><span class='line'>Out[5]: 'i'
+</span><span class='line'>
+</span><span class='line'>In [6]: s.read()
+</span><span class='line'>Out[6]: 'n'
+</span><span class='line'>
+</span><span class='line'>In [7]: s.read()
+</span><span class='line'>Out[7]: 'a'
+</span><span class='line'>
+</span><span class='line'>In [8]: s.read(10)
+</span><span class='line'>Out[8]: '\r\n'
+</span><span class='line'>
+</span><span class='line'>In [9]: s.read(10)
+</span><span class='line'>Out[9]: ''
+</span><span class='line'>
+</span><span class='line'>In [10]: s.write("r")
+</span><span class='line'>Out[10]: 1
+</span><span class='line'>
+</span><span class='line'>In [11]: s.read(10)
+</span><span class='line'>Out[11]: 'Nina\r\n'</span></code></pre></td></tr></table></div></figure>
+
+
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Learn python using python and iPython]]></title>
+    <link href="http://ruoranwang.github.com/blog/2012/10/18/learn-python-using-python-and-ipython/"/>
+    <updated>2012-10-18T00:38:00-04:00</updated>
+    <id>http://ruoranwang.github.com/blog/2012/10/18/learn-python-using-python-and-ipython</id>
+    <content type="html"><![CDATA[<p>Doesn&#8217;t the title sound awesome?</p>
+
+<p>Expanded version:
+Learn python(the language) using python(source code and test cases) and ipython(a python module)</p>
+
+<p>So:</p>
+
+<ol>
+<li>In order to understand python(source code and test cases), you need knowledge of python(language) and ipython(to use the source!)</li>
+<li>In order to use ipython, you need to play with python(language) in ipython</li>
+</ol>
+
+
+<p>The pseudo source code for the title:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>learn(python):
+</span><span class='line'>    use = python, ipython
+</span><span class='line'>    for item in use:
+</span><span class='line'>        if understand(item): return True
+</span><span class='line'>        else: return learn(item)</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Ok, I know that&#8217;s stupid. Here is my thought.</p>
+
+<p>I had never read the python source code before. Then, I noticed (finally) the path printed while doing <code>logging?</code>. (Question mark <code>?</code> after an item will show the detail of that item.)</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>Type:       module
+</span><span class='line'>String Form:&lt;module 'logging' from '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/logging/__init__.pyc'&gt;
+</span><span class='line'>File:       /System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/logging/__init__.py</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Fortunately, I went to that path and viewed the files, finding those system standard modules/libraries very, very, very well documented.</p>
+
+<p>I found many design patterns that I would like to learn, but had not clue about where to look at before.</p>
+
+<p>In words, ipython is very useful for checking documentation for anything you want to play with. Plus the tab completion helps you to list submodules, functions, or variables. This makes exploring a module as easy as traversing a file directory.</p>
+
+<p>As a result, I felt I was not using/learning python in a pythonic way. But now I (think I) do.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Python lambda function]]></title>

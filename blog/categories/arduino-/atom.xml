@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: arduino, | ocxced]]></title>
+  <link href="http://ruoranwang.github.com/blog/categories/arduino-/atom.xml" rel="self"/>
+  <link href="http://ruoranwang.github.com/"/>
+  <updated>2012-10-19T00:46:11-04:00</updated>
+  <id>http://ruoranwang.github.com/</id>
+  <author>
+    <name><![CDATA[Ruoran Wang]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Using Bluetooth Serial Port on OS X Mountain Lion]]></title>
+    <link href="http://ruoranwang.github.com/blog/2012/10/19/using-bluetooth-serial-port-on-os-x-mountain-lion/"/>
+    <updated>2012-10-19T00:38:00-04:00</updated>
+    <id>http://ruoranwang.github.com/blog/2012/10/19/using-bluetooth-serial-port-on-os-x-mountain-lion</id>
+    <content type="html"><![CDATA[<h4>Using Bluetooth Serial Port on OS X Mountain Lion</h4>
+
+<p>I am taking a robotics class, and simply wants to play with the bluetooth module. Maybe create a robot later to play with my cats?</p>
+
+<h4>Procedures</h4>
+
+<ul>
+<li>Find the bluetooth, the name of device is AC, for some unknown reason.</li>
+</ul>
+
+
+<p><img src="/images/bluetooth/find" alt="find" /></p>
+
+<ul>
+<li>Pair with it, the pairing code is 0000 in my case.</li>
+</ul>
+
+
+<p><img src="/images/bluetooth/pair" alt="pair" /></p>
+
+<ul>
+<li>The underlined part have some config to play with. The general idea is to use serial port service.</li>
+</ul>
+
+
+<p><img src="/images/bluetooth/config" alt="config" /></p>
+
+<ul>
+<li><code>Serial.println()</code> in arduino will write data to the pin1 (TX) and also to the USB cable. So you could compare your data received via bluetooth serial port with the data received via USB serial port. My usb serial port is <code>/dev/tty/usbmodemfa131</code>.</li>
+</ul>
+
+
+<p><img src="/images/bluetooth/arduino" alt="arduino" /></p>
+
+<ul>
+<li>The image below shows the display while using GNU <code>screen</code></li>
+</ul>
+
+
+<p><img src="/images/bluetooth/result" alt="result" /></p>
+
+<h4>Using screen</h4>
+
+<p>The number after the device name is the baud rate, which need to be the same as source.
+<code>
+screen tty.AC-DevB 9600
+</code></p>
+
+<h4>Using PySerial</h4>
+
+<p>```
+In [2]: s = serial.Serial('/dev/tty.AC-DevB', 9600, timeout=1)</p>
+
+<p>In [3]: s.write("r")
+Out[3]: 1</p>
+
+<p>In [4]: s.read()
+Out[4]: 'N'</p>
+
+<p>In [5]: s.read()
+Out[5]: 'i'</p>
+
+<p>In [6]: s.read()
+Out[6]: 'n'</p>
+
+<p>In [7]: s.read()
+Out[7]: 'a'</p>
+
+<p>In [8]: s.read(10)
+Out[8]: '\r\n'</p>
+
+<p>In [9]: s.read(10)
+Out[9]: ''</p>
+
+<p>In [10]: s.write("r")
+Out[10]: 1</p>
+
+<p>In [11]: s.read(10)
+Out[11]: 'Nina\r\n'
+```</p>
+]]></content>
+  </entry>
+  
+</feed>

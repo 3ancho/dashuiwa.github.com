@@ -51,15 +51,27 @@
         <lastmod>2012-10-14T13:54:15-04:00</lastmod>
     </url>
     <url>
+        <loc>
+            http://ruoranwang.github.com/blog/2012/10/18/learn-python-using-python-and-ipython/
+        </loc>
+        <lastmod>2012-10-19T00:41:37-04:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://ruoranwang.github.com/blog/2012/10/19/using-bluetooth-serial-port-on-os-x-mountain-lion/
+        </loc>
+        <lastmod>2012-10-19T00:45:59-04:00</lastmod>
+    </url>
+    <url>
         <loc>http://ruoranwang.github.com/about/</loc>
         <lastmod>2012-10-10T11:49:32-04:00</lastmod>
     </url>
     <url>
         <loc>http://ruoranwang.github.com/blog/archives/</loc>
-        <lastmod>2012-10-14T13:54:15-04:00</lastmod>
+        <lastmod>2012-10-19T00:45:59-04:00</lastmod>
     </url>
     <url>
         <loc>http://ruoranwang.github.com/</loc>
-        <lastmod>2012-10-14T13:54:15-04:00</lastmod>
+        <lastmod>2012-10-19T00:45:59-04:00</lastmod>
     </url>
 </urlset>
