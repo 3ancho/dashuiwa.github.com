@@ -9,28 +9,30 @@ categories: arduino, python
 
 I am taking a robotics class, and simply wants to play with the bluetooth module. Maybe create a robot later to play with my cats?
 
+So I will send a character "r" to arduino via bluetooth, and the program running on arduino will respond "Nina" as soon as it got the "r". 
+
 #### Procedures
 
 
 * Find the bluetooth, the name of device is AC, for some unknown reason.
 
-{% /images/bluetooth/find %}
+{% img /images/bluetooth/find.png %}
 
 * Pair with it, the pairing code is 0000 in my case.
 
-{% /images/bluetooth/pair %}
+{% img /images/bluetooth/pair.png %}
 
 * The underlined part have some config to play with. The general idea is to use serial port service.
 
-{% /images/bluetooth/config %}
+{% img /images/bluetooth/config.png %}
 
 * `Serial.println()` in arduino will write data to the pin1 (TX) and also to the USB cable. So you could compare your data received via bluetooth serial port with the data received via USB serial port. My usb serial port is `/dev/tty/usbmodemfa131`.  
 
-{% /images/bluetooth/arduino %}
+{% img /images/bluetooth/arduino.png %}
 
 * The image below shows the display while using GNU `screen`
 
-{% /images/bluetooth/result %}
+{% img /images/bluetooth/result.png %}
 
 
 #### Using screen
