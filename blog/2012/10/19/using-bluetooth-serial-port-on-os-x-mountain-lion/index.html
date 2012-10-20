@@ -107,6 +107,8 @@
 
 <p>I am taking a robotics class, and simply wants to play with the bluetooth module. Maybe create a robot later to play with my cats?</p>
 
+<p>So I will send a character &#8220;r&#8221; to arduino via bluetooth, and the program running on arduino will respond &#8220;Nina&#8221; as soon as it got the &#8220;r&#8221;.</p>
+
 <h4>Procedures</h4>
 
 <ul>
@@ -114,35 +116,35 @@
 </ul>
 
 
-<p><img src="/images/bluetooth/find" alt="find" /></p>
+<p><img src="/images/bluetooth/find.png"></p>
 
 <ul>
 <li>Pair with it, the pairing code is 0000 in my case.</li>
 </ul>
 
 
-<p><img src="/images/bluetooth/pair" alt="pair" /></p>
+<p><img src="/images/bluetooth/pair.png"></p>
 
 <ul>
 <li>The underlined part have some config to play with. The general idea is to use serial port service.</li>
 </ul>
 
 
-<p><img src="/images/bluetooth/config" alt="config" /></p>
+<p><img src="/images/bluetooth/config.png"></p>
 
 <ul>
 <li><code>Serial.println()</code> in arduino will write data to the pin1 (TX) and also to the USB cable. So you could compare your data received via bluetooth serial port with the data received via USB serial port. My usb serial port is <code>/dev/tty/usbmodemfa131</code>.</li>
 </ul>
 
 
-<p><img src="/images/bluetooth/arduino" alt="arduino" /></p>
+<p><img src="/images/bluetooth/arduino.png"></p>
 
 <ul>
 <li>The image below shows the display while using GNU <code>screen</code></li>
 </ul>
 
 
-<p><img src="/images/bluetooth/result" alt="result" /></p>
+<p><img src="/images/bluetooth/result.png"></p>
 
 <h4>Using screen</h4>
 
