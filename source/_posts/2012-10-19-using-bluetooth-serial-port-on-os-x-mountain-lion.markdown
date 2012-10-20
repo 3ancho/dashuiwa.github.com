@@ -14,23 +14,23 @@ I am taking a robotics class, and simply wants to play with the bluetooth module
 
 * Find the bluetooth, the name of device is AC, for some unknown reason.
 
-![find](/images/bluetooth/find)
+{% /images/bluetooth/find %}
 
 * Pair with it, the pairing code is 0000 in my case.
 
-![pair](/images/bluetooth/pair)
+{% /images/bluetooth/pair %}
 
 * The underlined part have some config to play with. The general idea is to use serial port service.
 
-![config](/images/bluetooth/config)
+{% /images/bluetooth/config %}
 
 * `Serial.println()` in arduino will write data to the pin1 (TX) and also to the USB cable. So you could compare your data received via bluetooth serial port with the data received via USB serial port. My usb serial port is `/dev/tty/usbmodemfa131`.  
 
-![arduino](/images/bluetooth/arduino)
+{% /images/bluetooth/arduino %}
 
 * The image below shows the display while using GNU `screen`
 
-![result](/images/bluetooth/result)
+{% /images/bluetooth/result %}
 
 
 #### Using screen
