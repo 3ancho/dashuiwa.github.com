@@ -121,7 +121,7 @@ PATH=/Applications/SenchaSDKTools-2.0.0-beta3/appbuilder:$PATH</p>
 
 <p>Second problem: [ERROR] Sencha SDK Tools 2.0.0-beta3 cannot be found from your
 system (SENCHA_SDK_TOOLS_2_0_0_BETA3 environment variable is not set). Please
-download and install version "2.0.0-beta3" of the tools from
+download and install version &#8220;2.0.0-beta3&#8221; of the tools from
 <a href="http://www.sencha.com/products/sdk-%0Atools">http://www.sencha.com/products/sdk-tools</a> . Close this terminal and open a new one after the installation is
 complete.</p>
 
@@ -164,7 +164,7 @@ correctly</a></p>
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://ruoranwang.github.com/blog/2012/06/10/working-with-sencha-touch-2-on-os-x-106/" data-via="" data-counturl="http://ruoranwang.github.com/blog/2012/06/10/working-with-sencha-touch-2-on-os-x-106/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://ruoranwang.github.com/blog/2012/06/10/working-with-sencha-touch-2-on-os-x-106/" data-via="dashuiwa" data-counturl="http://ruoranwang.github.com/blog/2012/06/10/working-with-sencha-touch-2-on-os-x-106/" >Tweet</a>
   
   
   <div class="g-plusone" data-size="medium"></div>
@@ -219,6 +219,53 @@ correctly</a></p>
   </ul>
 </section>
 
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/ruoranwang">@ruoranwang</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'ruoranwang',
+            count: 5,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("dashuiwa", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/dashuiwa" class="twitter-follow-button" data-show-count="false">Follow @dashuiwa</a>
+  
+</section>
+
+
   
 </aside>
 
@@ -226,7 +273,7 @@ correctly</a></p>
     </div>
   </div>
   <footer role="contentinfo"><p>
-  Copyright &copy; 2012 - Ruoran Wang -
+  Copyright &copy; 2013 - Ruoran Wang -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>
 

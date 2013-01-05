@@ -10,7 +10,7 @@
 
   
   <meta name="description" content="I was configuring snippets.vim, which I should have done earlier that could
-save a lot of time. Then, I ran into an issue. I've been developing a web &hellip;">
+save a lot of time. Then, I ran into an issue. I&#8217;ve been developing &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -105,12 +105,12 @@ save a lot of time. Then, I ran into an issue. I've been developing a web &helli
 
 
 <div class="entry-content"><p>I was configuring snippets.vim, which I should have done earlier that could
-save a lot of time. Then, I ran into an issue. I've been developing a web app
+save a lot of time. Then, I ran into an issue. I&#8217;ve been developing a web app
 using Flask, and this means I use jinja2 for html template. My templates are
 all with extension .html, which should work directly with default html
-snippets come with snippets.vim. But it doesn't.</p>
+snippets come with snippets.vim. But it doesn&#8217;t.</p>
 
-<p>I didn't find a solution online. However, I found some snippets for django
+<p>I didn&#8217;t find a solution online. However, I found some snippets for django
 template. The final solution is just append content from html.snippets to
 htmldjango.snippets.</p>
 
@@ -151,7 +151,7 @@ htmldjango.snippets.</p>
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://ruoranwang.github.com/blog/2012/03/06/snippetsvim-jinjadjango-template-doesnt-expand/" data-via="" data-counturl="http://ruoranwang.github.com/blog/2012/03/06/snippetsvim-jinjadjango-template-doesnt-expand/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://ruoranwang.github.com/blog/2012/03/06/snippetsvim-jinjadjango-template-doesnt-expand/" data-via="dashuiwa" data-counturl="http://ruoranwang.github.com/blog/2012/03/06/snippetsvim-jinjadjango-template-doesnt-expand/" >Tweet</a>
   
   
   <div class="g-plusone" data-size="medium"></div>
@@ -206,6 +206,53 @@ htmldjango.snippets.</p>
   </ul>
 </section>
 
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/ruoranwang">@ruoranwang</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'ruoranwang',
+            count: 5,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("dashuiwa", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/dashuiwa" class="twitter-follow-button" data-show-count="false">Follow @dashuiwa</a>
+  
+</section>
+
+
   
 </aside>
 
@@ -213,7 +260,7 @@ htmldjango.snippets.</p>
     </div>
   </div>
   <footer role="contentinfo"><p>
-  Copyright &copy; 2012 - Ruoran Wang -
+  Copyright &copy; 2013 - Ruoran Wang -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>
 
