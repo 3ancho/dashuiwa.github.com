@@ -5,12 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>snippets.vim: jinja/django template doesn't expand - Decx = 1210</title>
+  <title>Install Python virtualenvwrapper on OS X Mountain Lion - Decx = 1210</title>
   <meta name="author" content="Ruoran Wang">
 
   
-  <meta name="description" content="I was configuring snippets.vim, which I should have done earlier that could
-save a lot of time. Then, I ran into an issue. I&#8217;ve been developing &hellip;">
+  <meta name="description" content="This seems trivial right? pip install?
+Well, that&#8217;s not the case if you want virtualenv or virtualenvwrapper working properly. You could, using &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -19,7 +19,7 @@ save a lot of time. Then, I ran into an issue. I&#8217;ve been developing &helli
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://ruoranwang.github.com/blog/2012/03/06/snippetsvim-jinjadjango-template-doesnt-expand/">
+  <link rel="canonical" href="http://ruoranwang.github.com/blog/2013/01/11/install-python-virtualenvwrapper-on-os-x-mountain-lion/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -81,7 +81,7 @@ save a lot of time. Then, I ran into an issue. I&#8217;ve been developing &helli
   
   <header>
     
-      <h1 class="entry-title">snippets.vim: Jinja/django Template Doesn't Expand</h1>
+      <h1 class="entry-title">Install Python Virtualenvwrapper on OS X Mountain Lion</h1>
     
     
       <p class="meta">
@@ -97,30 +97,106 @@ save a lot of time. Then, I ran into an issue. I&#8217;ve been developing &helli
   
 
 
-<time datetime="2012-03-06T00:00:00-05:00" pubdate data-updated="true">Mar 6<span>th</span>, 2012</time>
+<time datetime="2013-01-11T00:24:00-05:00" pubdate data-updated="true">Jan 11<span>th</span>, 2013</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>I was configuring snippets.vim, which I should have done earlier that could
-save a lot of time. Then, I ran into an issue. I&#8217;ve been developing a web app
-using Flask, and this means I use jinja2 for html template. My templates are
-all with extension .html, which should work directly with default html
-snippets come with snippets.vim. But it doesn&#8217;t.</p>
+<div class="entry-content"><p>This seems trivial right? pip install?
+Well, that&#8217;s not the case if you want virtualenv or virtualenvwrapper working properly.</p>
 
-<p>I didn&#8217;t find a solution online. However, I found some snippets for django
-template. The final solution is just append content from html.snippets to
-htmldjango.snippets.</p>
+<p>You could, using pip, to install those packages. But you will notice even provided <code>--no-site-packages</code>, you will still able to import from system site-packages. (If you really did so, you will have them in <code>/Library/Python/2.7/site-packages/</code>). In my case, installing in virtualenv will end up placing packages into system site-packages path. Oh my zsh.</p>
 
-<pre><code>cat html.snippets &gt;&gt; htmldjango.snippets
+<p>For many reasons you need to install python from homebrew or somewhere else.</p>
+
+<h3>Mountain Lion Python (2.7.2)</h3>
+
+<p>Mountain Lion Default python:</p>
+
+<pre><code>which python 
+/usr/bin/python 
 </code></pre>
 
-<p>And in .vimrc add</p>
+<p>Mountain Lion Defaut python Framework/Package/Library Path:</p>
 
-<pre><code>autocmd FileType html set ft=htmldjango.snippets " For SnipMate
+<pre><code>/System/Library/Frameworks/Python.framework/Versions/2.7/
+/Library/Python/2.7/site-packages/
 </code></pre>
+
+<p>Note: Mountain lion python will cause trouble when using virtualenv/virtualenvwrapper.</p>
+
+<h3>Brew installed python (2.7.3)</h3>
+
+<p>Simply:</p>
+
+<pre><code>brew install python
+</code></pre>
+
+<p>I got:</p>
+
+<pre><code>which python
+/usr/local/bin/python
+</code></pre>
+
+<p>Then you got pip distribute ready.
+Have fun with pip install.
+My site-packages path is:</p>
+
+<pre><code>/usr/local/lib/python2.7/site-packages/
+</code></pre>
+
+<h3>virtualenvwrapper</h3>
+
+<pre><code>pip install virtualenvwrapper
+
+export WORKON_HOME=~/Envs
+mkdir -p $WORKON_HOME
+source /usr/local/share/python/virtualenvwrapper.sh
+# change above path accordingly 
+mkvirtualenv env1
+</code></pre>
+
+<p>.zshrc or .bashrc add following:</p>
+
+<pre><code>PATH=/usr/local/share/python/:$PATH
+export WORKON_HOME=$HOME/.virtualenvs
+source /usr/local/bin/virtualenvwrapper.sh
+</code></pre>
+
+<p>There are couple of paths you might need to add, such as <code>/usr/local/share/python/</code>.(This contains some python scripts. e.g yolk, virtualenvwrapper.sh, etc)</p>
+
+<h4>List Installed packages</h4>
+
+<pre><code>lssitepackages   
+rmvirtualenv
+cpvirtualenv
+</code></pre>
+
+<h4>Switch to a env</h4>
+
+<pre><code>workon env1
+deactivate
+</code></pre>
+
+<h3>With zsh</h3>
+
+<p>In <code>$WORKON_HOME/postactivate</code> add:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>PS1="$_OLD_VIRTUAL_PS1"
+</span><span class='line'>_OLD_RPROMPT="$RPROMPT"
+</span><span class='line'>RPROMPT="%{${fg_bold[white]}%}(env: %{${fg[green]}%}`basename \"$VIRTUAL_ENV\"`%{${fg_bold[white]}%})%{${reset_color}%} $RPROMPT"</span></code></pre></td></tr></table></div></figure>
+
+
+<p>In <code>$WORKON_HOME/postdeactivate</code> add:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>RPROMPT="$_OLD_RPROMPT"</span></code></pre></td></tr></table></div></figure>
+
 </div>
 
 
@@ -143,15 +219,21 @@ htmldjango.snippets.</p>
   
 
 
-<time datetime="2012-03-06T00:00:00-05:00" pubdate data-updated="true">Mar 6<span>th</span>, 2012</time>
+<time datetime="2013-01-11T00:24:00-05:00" pubdate data-updated="true">Jan 11<span>th</span>, 2013</time>
       
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/os/'>os</a>, <a class='category' href='/blog/categories/python-/'>python,</a>, <a class='category' href='/blog/categories/x/'>x</a>
+  
+</span>
 
 
     </p>
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://ruoranwang.github.com/blog/2012/03/06/snippetsvim-jinjadjango-template-doesnt-expand/" data-via="dashuiwa" data-counturl="http://ruoranwang.github.com/blog/2012/03/06/snippetsvim-jinjadjango-template-doesnt-expand/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://ruoranwang.github.com/blog/2013/01/11/install-python-virtualenvwrapper-on-os-x-mountain-lion/" data-via="dashuiwa" data-counturl="http://ruoranwang.github.com/blog/2013/01/11/install-python-virtualenvwrapper-on-os-x-mountain-lion/" >Tweet</a>
   
   
   <div class="g-plusone" data-size="medium"></div>
@@ -162,10 +244,8 @@ htmldjango.snippets.</p>
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2012/02/25/vim-spell-check/" title="Previous Post: Vim spell check ">&laquo; Vim spell check </a>
+        <a class="basic-alignment left" href="/blog/2012/10/19/using-bluetooth-serial-port-on-os-x-mountain-lion/" title="Previous Post: Using Bluetooth Serial Port on OS X Mountain Lion">&laquo; Using Bluetooth Serial Port on OS X Mountain Lion</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2012/04/10/python-27-on-snow-leopard/" title="Next Post: Python 2.7 on Snow Leopard">Python 2.7 on Snow Leopard &raquo;</a>
       
     </p>
   </footer>

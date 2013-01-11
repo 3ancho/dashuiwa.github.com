@@ -9,7 +9,8 @@
   <meta name="author" content="Ruoran Wang">
 
   
-  <meta name="description" content="Using Bluetooth Serial Port on OS X Mountain Lion I am taking a robotics class, and simply wants to play with the bluetooth module. Maybe create a &hellip;">
+  <meta name="description" content="This seems trivial right? pip install?
+Well, that&#8217;s not the case if you want virtualenv or virtualenvwrapper working properly. You could, using &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -77,6 +78,134 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/01/11/install-python-virtualenvwrapper-on-os-x-mountain-lion/">Install Python Virtualenvwrapper on OS X Mountain Lion</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-01-11T00:24:00-05:00" pubdate data-updated="true">Jan 11<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>This seems trivial right? pip install?
+Well, that&#8217;s not the case if you want virtualenv or virtualenvwrapper working properly.</p>
+
+<p>You could, using pip, to install those packages. But you will notice even provided <code>--no-site-packages</code>, you will still able to import from system site-packages. (If you really did so, you will have them in <code>/Library/Python/2.7/site-packages/</code>). In my case, installing in virtualenv will end up placing packages into system site-packages path. Oh my zsh.</p>
+
+<p>For many reasons you need to install python from homebrew or somewhere else.</p>
+
+<h3>Mountain Lion Python (2.7.2)</h3>
+
+<p>Mountain Lion Default python:</p>
+
+<pre><code>which python 
+/usr/bin/python 
+</code></pre>
+
+<p>Mountain Lion Defaut python Framework/Package/Library Path:</p>
+
+<pre><code>/System/Library/Frameworks/Python.framework/Versions/2.7/
+/Library/Python/2.7/site-packages/
+</code></pre>
+
+<p>Note: Mountain lion python will cause trouble when using virtualenv/virtualenvwrapper.</p>
+
+<h3>Brew installed python (2.7.3)</h3>
+
+<p>Simply:</p>
+
+<pre><code>brew install python
+</code></pre>
+
+<p>I got:</p>
+
+<pre><code>which python
+/usr/local/bin/python
+</code></pre>
+
+<p>Then you got pip distribute ready.
+Have fun with pip install.
+My site-packages path is:</p>
+
+<pre><code>/usr/local/lib/python2.7/site-packages/
+</code></pre>
+
+<h3>virtualenvwrapper</h3>
+
+<pre><code>pip install virtualenvwrapper
+
+export WORKON_HOME=~/Envs
+mkdir -p $WORKON_HOME
+source /usr/local/share/python/virtualenvwrapper.sh
+# change above path accordingly 
+mkvirtualenv env1
+</code></pre>
+
+<p>.zshrc or .bashrc add following:</p>
+
+<pre><code>PATH=/usr/local/share/python/:$PATH
+export WORKON_HOME=$HOME/.virtualenvs
+source /usr/local/bin/virtualenvwrapper.sh
+</code></pre>
+
+<p>There are couple of paths you might need to add, such as <code>/usr/local/share/python/</code>.(This contains some python scripts. e.g yolk, virtualenvwrapper.sh, etc)</p>
+
+<h4>List Installed packages</h4>
+
+<pre><code>lssitepackages   
+rmvirtualenv
+cpvirtualenv
+</code></pre>
+
+<h4>Switch to a env</h4>
+
+<pre><code>workon env1
+deactivate
+</code></pre>
+
+<h3>With zsh</h3>
+
+<p>In <code>$WORKON_HOME/postactivate</code> add:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>PS1="$_OLD_VIRTUAL_PS1"
+</span><span class='line'>_OLD_RPROMPT="$RPROMPT"
+</span><span class='line'>RPROMPT="%{${fg_bold[white]}%}(env: %{${fg[green]}%}`basename \"$VIRTUAL_ENV\"`%{${fg_bold[white]}%})%{${reset_color}%} $RPROMPT"</span></code></pre></td></tr></table></div></figure>
+
+
+<p>In <code>$WORKON_HOME/postdeactivate</code> add:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>RPROMPT="$_OLD_RPROMPT"</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -399,45 +528,6 @@ The forum is based on express, which seems to be very handy.</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/06/28/start-a-micro-instance-with-a-larger-ebs-volume-than-the-default-one/">Start a Micro Instance With a Larger EBS Volume Than the Default One</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-06-28T00:00:00-04:00" pubdate data-updated="true">Jun 28<span>th</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Start a micro instance with a larger EBS volume than the default one.</p>
-
-<p>ec2-run-instances -k KEY -n 1 -t t1.micro &#8211;block-device-mapping /dev/sda1=:10
-ami-0ce41865 -r us-east-1d</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -457,6 +547,10 @@ ami-0ce41865 -r us-east-1d</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/01/11/install-python-virtualenvwrapper-on-os-x-mountain-lion/">Install Python virtualenvwrapper on OS X Mountain Lion</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2012/10/19/using-bluetooth-serial-port-on-os-x-mountain-lion/">Using Bluetooth Serial Port on OS X Mountain Lion</a>
       </li>
     
@@ -470,10 +564,6 @@ ami-0ce41865 -r us-east-1d</p>
     
       <li class="post">
         <a href="/blog/2012/10/10/playing-with-nodejs/">Playing with Nodejs</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/06/28/start-a-micro-instance-with-a-larger-ebs-volume-than-the-default-one/">Start a micro instance with a larger EBS volume than the default one</a>
       </li>
     
   </ul>
