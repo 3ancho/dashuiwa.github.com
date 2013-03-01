@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: java | Decx = 1210]]></title>
+  <link href="http://ruoranwang.github.com/blog/categories/java/atom.xml" rel="self"/>
+  <link href="http://ruoranwang.github.com/"/>
+  <updated>2013-02-28T23:55:01-05:00</updated>
+  <id>http://ruoranwang.github.com/</id>
+  <author>
+    <name><![CDATA[Ruoran Wang]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[play and cloud foundary]]></title>
+    <link href="http://ruoranwang.github.com/blog/2013/02/28/play-and-cloud-foundary/"/>
+    <updated>2013-02-28T23:52:00-05:00</updated>
+    <id>http://ruoranwang.github.com/blog/2013/02/28/play-and-cloud-foundary</id>
+    <content type="html"><![CDATA[<h2>Play! on Cloud Foundary</h2>
+
+<h4>Play!</h4>
+
+<p>Install is easy. Now you got verything inatslled.</p>
+
+<p>```</p>
+
+<h1>file conf/application.conf</h1>
+
+<p>db.default.driver=org.postgresql.Driver
+db.default.url="jdbc:postgresql://localhost/play_todolist"
+db.default.user="username"
+db.default.password="password"
+```</p>
+
+<p>We are using PostgreSQL.</p>
+
+<p>In thus those two lines is necessary:
+<code>db.default.driver=org.postgresql.Driver</code> and <code>db.default.url="jdbc:postgresql://localhost/play_todolist"</code></p>
+
+<p>However, you need to download:
+<a href="http://jdbc.postgresql.org/download.html">postgresql-9.2-1002.jdbc4.jar</a>
+Note: it's jdbc4, not jdbc3.</p>
+
+<h5>PostgreSQL</h5>
+
+<p>Install is easy for all OSes.</p>
+
+<p>MySQL command -> PostgreSQL command:</p>
+
+<ul>
+<li><code>mysql -&gt; psql</code></li>
+<li><code>show databeses -&gt; \l</code></li>
+<li><code>show tables -&gt; \d</code></li>
+<li><code>create database DBNAME -&gt; The same</code></li>
+</ul>
+
+
+<p>For linux</p>
+
+<p>you need to become user <code>postgres</code> and then type <code>psql</code> to enter the interactive shell.</p>
+
+<p><code>\password</code> could change password
+<code>\password USER</code> could change password for USER</p>
+
+<p>To create a user
+<code>create user USERNAME</code></p>
+
+<p>You could figure out the reset using google :)</p>
+
+<h4>Cloud Foundary</h4>
+
+<ol>
+<li>Sign up.</li>
+<li>download rubygem.</li>
+<li>deploy</li>
+</ol>
+
+
+<p>We don't need micro cloud foundary, because we use vagrant (virtualbox).</p>
+]]></content>
+  </entry>
+  
+</feed>

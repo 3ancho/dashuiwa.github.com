@@ -5,11 +5,17 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Python lambda function - Decx = 1210</title>
+  <title>play and cloud foundary - Decx = 1210</title>
   <meta name="author" content="Ruoran Wang">
 
   
-  <meta name="description" content="This is the first episode of a series that revisits features that I didn&#8217;t fully understand, about a technology such as Python, JavaScript, etc &hellip;">
+  <meta name="description" content="Play! on Cloud Foundary Play! Install is easy. Now you got verything inatslled. 1
+2
+3
+4
+5
+6
+# file conf/application.conf db.default.driver=org. &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +24,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://ruoranwang.github.com/blog/2012/10/14/python-lambda-function/">
+  <link rel="canonical" href="http://ruoranwang.github.com/blog/2013/02/28/play-and-cloud-foundary/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -80,7 +86,7 @@
   
   <header>
     
-      <h1 class="entry-title">Python Lambda Function</h1>
+      <h1 class="entry-title">Play and Cloud Foundary</h1>
     
     
       <p class="meta">
@@ -96,25 +102,78 @@
   
 
 
-<time datetime="2012-10-14T13:54:00-04:00" pubdate data-updated="true">Oct 14<span>th</span>, 2012</time>
+<time datetime="2013-02-28T23:52:00-05:00" pubdate data-updated="true">Feb 28<span>th</span>, 2013</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>This is the first episode of a series that revisits features that I didn&#8217;t fully understand, about a technology such as Python, JavaScript, etc. The topic domain is, well, anything about computer science. (Really?) The purpose is, hmm, have fun. (Really?)</p>
+<div class="entry-content"><h2>Play! on Cloud Foundary</h2>
 
-<p>Ok, let&#8217;s get started, Python Lambda Functions.</p>
+<h4>Play!</h4>
+
+<p>Install is easy. Now you got verything inatslled.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'># file conf/application.conf 
+</span><span class='line'>
+</span><span class='line'>db.default.driver=org.postgresql.Driver
+</span><span class='line'>db.default.url="jdbc:postgresql://localhost/play_todolist"
+</span><span class='line'>db.default.user="username"
+</span><span class='line'>db.default.password="password"</span></code></pre></td></tr></table></div></figure>
+
+
+<p>We are using PostgreSQL.</p>
+
+<p>In thus those two lines is necessary:
+<code>db.default.driver=org.postgresql.Driver</code> and <code>db.default.url="jdbc:postgresql://localhost/play_todolist"</code></p>
+
+<p>However, you need to download:
+<a href="http://jdbc.postgresql.org/download.html">postgresql-9.2-1002.jdbc4.jar</a>
+Note: it&#8217;s jdbc4, not jdbc3.</p>
+
+<h5>PostgreSQL</h5>
+
+<p>Install is easy for all OSes.</p>
+
+<p>MySQL command -> PostgreSQL command:</p>
 
 <ul>
-<li>So, it&#8217;s anonymous functions, like <code>function() {}</code> in JavaScript, obviously.</li>
-<li>It&#8217;s a feature inherited from functional programming, cool and confusing.</li>
-<li>Work well with filter(), map(), and reduce(). (all take a function and a sequence)</li>
+<li><code>mysql -&gt; psql</code></li>
+<li><code>show databeses -&gt; \l</code></li>
+<li><code>show tables -&gt; \d</code></li>
+<li><code>create database DBNAME -&gt; The same</code></li>
 </ul>
 
 
-<p>In summary, lambda in python, or possible in elsewhere, seems to be used to describe the individual affect of an AOE.</p>
+<p>For linux</p>
+
+<p>you need to become user <code>postgres</code> and then type <code>psql</code> to enter the interactive shell.</p>
+
+<p><code>\password</code> could change password
+<code>\password USER</code> could change password for USER</p>
+
+<p>To create a user
+<code>create user USERNAME</code></p>
+
+<p>You could figure out the reset using google :)</p>
+
+<h4>Cloud Foundary</h4>
+
+<ol>
+<li>Sign up.</li>
+<li>download rubygem.</li>
+<li>deploy</li>
+</ol>
+
+
+<p>We don&#8217;t need micro cloud foundary, because we use vagrant (virtualbox).</p>
 </div>
 
 
@@ -137,15 +196,21 @@
   
 
 
-<time datetime="2012-10-14T13:54:00-04:00" pubdate data-updated="true">Oct 14<span>th</span>, 2012</time>
+<time datetime="2013-02-28T23:52:00-05:00" pubdate data-updated="true">Feb 28<span>th</span>, 2013</time>
       
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/java/'>java</a>
+  
+</span>
 
 
     </p>
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://ruoranwang.github.com/blog/2012/10/14/python-lambda-function/" data-via="dashuiwa" data-counturl="http://ruoranwang.github.com/blog/2012/10/14/python-lambda-function/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://ruoranwang.github.com/blog/2013/02/28/play-and-cloud-foundary/" data-via="dashuiwa" data-counturl="http://ruoranwang.github.com/blog/2013/02/28/play-and-cloud-foundary/" >Tweet</a>
   
   
   <div class="g-plusone" data-size="medium"></div>
@@ -156,10 +221,8 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2012/10/10/playing-with-nodejs/" title="Previous Post: Playing with Nodejs">&laquo; Playing with Nodejs</a>
+        <a class="basic-alignment left" href="/blog/2013/01/11/install-python-virtualenvwrapper-on-os-x-mountain-lion/" title="Previous Post: Install Python virtualenvwrapper on OS X Mountain Lion">&laquo; Install Python virtualenvwrapper on OS X Mountain Lion</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2012/10/18/learn-python-using-python-and-ipython/" title="Next Post: Learn python using python and iPython">Learn python using python and iPython &raquo;</a>
       
     </p>
   </footer>

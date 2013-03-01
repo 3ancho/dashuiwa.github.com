@@ -9,8 +9,13 @@
   <meta name="author" content="Ruoran Wang">
 
   
-  <meta name="description" content="This seems trivial right? pip install?
-Well, that&#8217;s not the case if you want virtualenv or virtualenvwrapper working properly. You could, using &hellip;">
+  <meta name="description" content="Play! on Cloud Foundary Play! Install is easy. Now you got verything inatslled. 1
+2
+3
+4
+5
+6
+# file conf/application.conf db.default.driver=org. &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -78,6 +83,106 @@ Well, that&#8217;s not the case if you want virtualenv or virtualenvwrapper work
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/02/28/play-and-cloud-foundary/">Play and Cloud Foundary</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-02-28T23:52:00-05:00" pubdate data-updated="true">Feb 28<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>Play! on Cloud Foundary</h2>
+
+<h4>Play!</h4>
+
+<p>Install is easy. Now you got verything inatslled.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'># file conf/application.conf 
+</span><span class='line'>
+</span><span class='line'>db.default.driver=org.postgresql.Driver
+</span><span class='line'>db.default.url="jdbc:postgresql://localhost/play_todolist"
+</span><span class='line'>db.default.user="username"
+</span><span class='line'>db.default.password="password"</span></code></pre></td></tr></table></div></figure>
+
+
+<p>We are using PostgreSQL.</p>
+
+<p>In thus those two lines is necessary:
+<code>db.default.driver=org.postgresql.Driver</code> and <code>db.default.url="jdbc:postgresql://localhost/play_todolist"</code></p>
+
+<p>However, you need to download:
+<a href="http://jdbc.postgresql.org/download.html">postgresql-9.2-1002.jdbc4.jar</a>
+Note: it&#8217;s jdbc4, not jdbc3.</p>
+
+<h5>PostgreSQL</h5>
+
+<p>Install is easy for all OSes.</p>
+
+<p>MySQL command -> PostgreSQL command:</p>
+
+<ul>
+<li><code>mysql -&gt; psql</code></li>
+<li><code>show databeses -&gt; \l</code></li>
+<li><code>show tables -&gt; \d</code></li>
+<li><code>create database DBNAME -&gt; The same</code></li>
+</ul>
+
+
+<p>For linux</p>
+
+<p>you need to become user <code>postgres</code> and then type <code>psql</code> to enter the interactive shell.</p>
+
+<p><code>\password</code> could change password
+<code>\password USER</code> could change password for USER</p>
+
+<p>To create a user
+<code>create user USERNAME</code></p>
+
+<p>You could figure out the reset using google :)</p>
+
+<h4>Cloud Foundary</h4>
+
+<ol>
+<li>Sign up.</li>
+<li>download rubygem.</li>
+<li>deploy</li>
+</ol>
+
+
+<p>We don&#8217;t need micro cloud foundary, because we use vagrant (virtualbox).</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -482,52 +587,6 @@ Learn python(the language) using python(source code and test cases) and ipython(
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/10/10/playing-with-nodejs/">Playing With Nodejs</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-10-10T11:37:00-04:00" pubdate data-updated="true">Oct 10<span>th</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Recently I started to play with nodejs. Inspired by <a href="http://cnodejs.org">cnodejs.org</a>, I created a forum called <a href="http://a2um.com">A2UM</a>.
-The forum is based on express, which seems to be very handy.</p>
-
-<p>Here are the technologies that involved.</p>
-
-<ul>
-<li>CloudFlare for CDN.</li>
-<li>VPS provided by DigitalOcean.</li>
-<li>Forum source code from node_club</li>
-</ul>
-
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -547,6 +606,10 @@ The forum is based on express, which seems to be very handy.</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/02/28/play-and-cloud-foundary/">play and cloud foundary</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/01/11/install-python-virtualenvwrapper-on-os-x-mountain-lion/">Install Python virtualenvwrapper on OS X Mountain Lion</a>
       </li>
     
@@ -560,10 +623,6 @@ The forum is based on express, which seems to be very handy.</p>
     
       <li class="post">
         <a href="/blog/2012/10/14/python-lambda-function/">Python lambda function</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/10/10/playing-with-nodejs/">Playing with Nodejs</a>
       </li>
     
   </ul>
