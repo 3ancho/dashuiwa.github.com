@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Wifi | Decx = 1210]]></title>
+  <link href="http://ruoranwang.github.com/blog/categories/wifi/atom.xml" rel="self"/>
+  <link href="http://ruoranwang.github.com/"/>
+  <updated>2013-05-17T00:15:34-04:00</updated>
+  <id>http://ruoranwang.github.com/</id>
+  <author>
+    <name><![CDATA[Ruoran Wang]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Raspberry Pi and University Wifi with WPA2 Enterprise]]></title>
+    <link href="http://ruoranwang.github.com/blog/2013/05/17/raspberry-pi-and-university-wifi-with-wpa2-enterprise/"/>
+    <updated>2013-05-17T00:04:00-04:00</updated>
+    <id>http://ruoranwang.github.com/blog/2013/05/17/raspberry-pi-and-university-wifi-with-wpa2-enterprise</id>
+    <content type="html"><![CDATA[<p>Since I did this twice because of SD card failure, I decided to document it just in case.</p>
+
+<ul>
+<li>Burn SD card</li>
+<li>Resize boot to fill SD card size</li>
+<li>Connect to MGuest</li>
+<li>Download Cert for MWireless</li>
+</ul>
+
+
+<p><code>
+wget http://www.instantssl.com/ssl-certificate-support/cert_installation/UTN-USERFirst-Hardware.crt
+</code></p>
+
+<p><code>
+mv UTN-USERFirst-Hardware.crt /etc/wpa_supplicant/UTN-USERFirst-Hardware.crt
+</code></p>
+
+<ul>
+<li>edit <code>/etc/wpa_supplicant/wpa_supplicant.conf</code></li>
+</ul>
+
+
+<p>```
+ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+update_config=1</p>
+
+<p>network={
+  ssid="MGuest"
+  key_mgmt=NONE
+  auth_alg=OPEN
+  disabled=1
+}</p>
+
+<p>network={
+  ssid="MWireless"</p>
+
+<pre><code>    key_mgmt=WPA-EAP
+    eap=PEAP
+    identity="USER"
+    password="PASS"
+    ca_cert="/etc/wpa_supplicant/UTN-USERFirst-Hardware.crt"
+    phase1="peaplabel=0"
+    phase2="auth=MSCHAPV2"
+</code></pre>
+
+<p>}
+```</p>
+
+<ul>
+<li>Finally, apply this configuration.</li>
+</ul>
+
+
+<p><code>`
+sudo wpa_supplicant -B -Dwext -iwlan0 -c /etc/wpa_supplicant/wpa_supplicant.conf -dd
+</code></p>
+]]></content>
+  </entry>
+  
+</feed>

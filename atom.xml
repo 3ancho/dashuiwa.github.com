@@ -4,7 +4,7 @@
   <title><![CDATA[Decx = 1210]]></title>
   <link href="http://ruoranwang.github.com/atom.xml" rel="self"/>
   <link href="http://ruoranwang.github.com/"/>
-  <updated>2013-02-28T23:55:01-05:00</updated>
+  <updated>2013-05-17T00:15:34-04:00</updated>
   <id>http://ruoranwang.github.com/</id>
   <author>
     <name><![CDATA[Ruoran Wang]]></name>
@@ -12,6 +12,89 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Raspberry Pi and University Wifi with WPA2 Enterprise]]></title>
+    <link href="http://ruoranwang.github.com/blog/2013/05/17/raspberry-pi-and-university-wifi-with-wpa2-enterprise/"/>
+    <updated>2013-05-17T00:04:00-04:00</updated>
+    <id>http://ruoranwang.github.com/blog/2013/05/17/raspberry-pi-and-university-wifi-with-wpa2-enterprise</id>
+    <content type="html"><![CDATA[<p>Since I did this twice because of SD card failure, I decided to document it just in case.</p>
+
+<ul>
+<li>Burn SD card</li>
+<li>Resize boot to fill SD card size</li>
+<li>Connect to MGuest</li>
+<li>Download Cert for MWireless</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>wget http://www.instantssl.com/ssl-certificate-support/cert_installation/UTN-USERFirst-Hardware.crt</span></code></pre></td></tr></table></div></figure>
+
+
+<p></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>mv UTN-USERFirst-Hardware.crt /etc/wpa_supplicant/UTN-USERFirst-Hardware.crt</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>edit <code>/etc/wpa_supplicant/wpa_supplicant.conf</code></li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+</span><span class='line'>update_config=1
+</span><span class='line'>
+</span><span class='line'>network={
+</span><span class='line'>  ssid="MGuest"
+</span><span class='line'>  key_mgmt=NONE
+</span><span class='line'>  auth_alg=OPEN
+</span><span class='line'>  disabled=1
+</span><span class='line'>}
+</span><span class='line'>
+</span><span class='line'>network={
+</span><span class='line'>  ssid="MWireless"
+</span><span class='line'>        key_mgmt=WPA-EAP
+</span><span class='line'>        eap=PEAP
+</span><span class='line'>        identity="USER"
+</span><span class='line'>        password="PASS"
+</span><span class='line'>        ca_cert="/etc/wpa_supplicant/UTN-USERFirst-Hardware.crt"
+</span><span class='line'>        phase1="peaplabel=0"
+</span><span class='line'>        phase2="auth=MSCHAPV2"
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>Finally, apply this configuration.</li>
+</ul>
+
+
+<p><code>`
+sudo wpa_supplicant -B -Dwext -iwlan0 -c /etc/wpa_supplicant/wpa_supplicant.conf -dd
+</code></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[play and cloud foundary]]></title>

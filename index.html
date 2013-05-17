@@ -9,13 +9,9 @@
   <meta name="author" content="Ruoran Wang">
 
   
-  <meta name="description" content="Play! on Cloud Foundary Play! Install is easy. Now you got verything inatslled. 1
-2
-3
-4
-5
-6
-# file conf/application.conf db.default.driver=org. &hellip;">
+  <meta name="description" content="Since I did this twice because of SD card failure, I decided to document it just in case. Burn SD card
+Resize boot to fill SD card size
+Connect to &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -83,6 +79,116 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/05/17/raspberry-pi-and-university-wifi-with-wpa2-enterprise/">Raspberry Pi and University Wifi With WPA2 Enterprise</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-05-17T00:04:00-04:00" pubdate data-updated="true">May 17<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Since I did this twice because of SD card failure, I decided to document it just in case.</p>
+
+<ul>
+<li>Burn SD card</li>
+<li>Resize boot to fill SD card size</li>
+<li>Connect to MGuest</li>
+<li>Download Cert for MWireless</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>wget http://www.instantssl.com/ssl-certificate-support/cert_installation/UTN-USERFirst-Hardware.crt</span></code></pre></td></tr></table></div></figure>
+
+
+<p></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>mv UTN-USERFirst-Hardware.crt /etc/wpa_supplicant/UTN-USERFirst-Hardware.crt</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>edit <code>/etc/wpa_supplicant/wpa_supplicant.conf</code></li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+</span><span class='line'>update_config=1
+</span><span class='line'>
+</span><span class='line'>network={
+</span><span class='line'>  ssid="MGuest"
+</span><span class='line'>  key_mgmt=NONE
+</span><span class='line'>  auth_alg=OPEN
+</span><span class='line'>  disabled=1
+</span><span class='line'>}
+</span><span class='line'>
+</span><span class='line'>network={
+</span><span class='line'>  ssid="MWireless"
+</span><span class='line'>        key_mgmt=WPA-EAP
+</span><span class='line'>        eap=PEAP
+</span><span class='line'>        identity="USER"
+</span><span class='line'>        password="PASS"
+</span><span class='line'>        ca_cert="/etc/wpa_supplicant/UTN-USERFirst-Hardware.crt"
+</span><span class='line'>        phase1="peaplabel=0"
+</span><span class='line'>        phase2="auth=MSCHAPV2"
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>Finally, apply this configuration.</li>
+</ul>
+
+
+<p><code>`
+sudo wpa_supplicant -B -Dwext -iwlan0 -c /etc/wpa_supplicant/wpa_supplicant.conf -dd
+</code></p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -540,53 +646,6 @@ Learn python(the language) using python(source code and test cases) and ipython(
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/10/14/python-lambda-function/">Python Lambda Function</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-10-14T13:54:00-04:00" pubdate data-updated="true">Oct 14<span>th</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>This is the first episode of a series that revisits features that I didn&#8217;t fully understand, about a technology such as Python, JavaScript, etc. The topic domain is, well, anything about computer science. (Really?) The purpose is, hmm, have fun. (Really?)</p>
-
-<p>Ok, let&#8217;s get started, Python Lambda Functions.</p>
-
-<ul>
-<li>So, it&#8217;s anonymous functions, like <code>function() {}</code> in JavaScript, obviously.</li>
-<li>It&#8217;s a feature inherited from functional programming, cool and confusing.</li>
-<li>Work well with filter(), map(), and reduce(). (all take a function and a sequence)</li>
-</ul>
-
-
-<p>In summary, lambda in python, or possible in elsewhere, seems to be used to describe the individual affect of an AOE.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -606,6 +665,10 @@ Learn python(the language) using python(source code and test cases) and ipython(
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/05/17/raspberry-pi-and-university-wifi-with-wpa2-enterprise/">Raspberry Pi and University Wifi with WPA2 Enterprise</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/02/28/play-and-cloud-foundary/">play and cloud foundary</a>
       </li>
     
@@ -619,10 +682,6 @@ Learn python(the language) using python(source code and test cases) and ipython(
     
       <li class="post">
         <a href="/blog/2012/10/18/learn-python-using-python-and-ipython/">Learn python using python and iPython</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/10/14/python-lambda-function/">Python lambda function</a>
       </li>
     
   </ul>
@@ -673,6 +732,8 @@ Learn python(the language) using python(source code and test cases) and ipython(
     <a href="http://twitter.com/dashuiwa" class="twitter-follow-button" data-show-count="false">Follow @dashuiwa</a>
   
 </section>
+
+
 
 
   
